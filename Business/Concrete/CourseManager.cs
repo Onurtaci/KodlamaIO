@@ -23,11 +23,13 @@ namespace Business.Concrete
         public void Add(Course course)
         {
             _courseDal.Add(course);
+            Console.WriteLine("Course added successfully");
         }
 
         public void Delete(Course course)
         {
             _courseDal.Delete(course);
+            Console.WriteLine("Course deleted successfully.");
         }
 
         public List<Course> GetAll()
@@ -44,6 +46,11 @@ namespace Business.Concrete
             return _courseDal.GetByCategory(categoryId);
         }
 
+        public Course GetById(int id)
+        {
+            return _courseDal.GetById(id);
+        }
+
         public List<Course> GetByInstructor(int instructorId)
         {
             return _courseDal.GetByInstructor(instructorId);
@@ -52,6 +59,7 @@ namespace Business.Concrete
         public void Update(Course course)
         {
             _courseDal.Update(course);
+            Console.WriteLine("Course updated successfully.");
         }
     }
 }

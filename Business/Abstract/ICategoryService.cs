@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface ICourseService : IEntityService<Course>
+    public interface ICategoryService : IEntityService<Category>
     {
-        List<Course> GetByCategory(int categoryId);
-        List<Course> GetByInstructor(int instructorId);
+
     }
 }
