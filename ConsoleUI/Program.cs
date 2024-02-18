@@ -1,4 +1,8 @@
-﻿using Entities.Abstract;
+﻿using Business.Concrete;
+using DataAccess.Concrete.InMemory;
+using Entities.Abstract;
 using Entities.Concrete;
 
-IEntity entity = new Course();
+CourseManager courseManager = new CourseManager(new InMemoryCourseDal());
+
+courseManager.GetByInstructor(1).ForEach(course => Console.WriteLine(course.CourseName));
